@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.2.1-dist/css/bootstrap.css" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ceb4a4b326.js" crossorigin="anonymous"></script>
+    <title>TPO - Comisión 22534</title>
+    
+    <script src="bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
+    
+</head>
+<body>
+
+	<!-- Cabecera -->
+
+	    <header>
+
+	    	<a href="nosotros.html"><img class="img-logo" src="img/Logo.png" alt="Logo"></a> 
+
+	    </header>
+
+            <nav>
+
+                <ul class="menu">
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="promociones.html">Promociones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    
+                </ul>
+            </nav>
+
+            <div class="hide">
+   					 <i class="fa fa-bars" aria-hidden="true"></i>
+ 			</div>
+
+
+
+
+    <!-- Contenido -->
+
+  
+
+    <main>
+
+      <section>
+
+        <div class="container">
+          <form id="my-form"  class="row mt-3 g-3 needs-validation" novalidate action="https://formspree.io/f/mjvzjgkn" method="POST" >
+
+            <div class="col-6 positionrelative">  
+                <label for="nameId" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nameId" required>
+                <div class="valid-tooltip">
+                  Todo bien
+                </div>
+                <div class="invalid-tooltip">
+                  Es necesario poner el nombre
+                </div>
+            </div>
+
+            
+              
+            <div class="col-6 position-relative"  >
+                <label for="surnameId" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="surnameId" required>
+                <div class="valid-tooltip">
+                  Todo bien
+                </div>
+                <div class="invalid-tooltip">
+                  Es necesario poner el Apellido
+                </div>
+            </div>
+                
+            <div class="col-9 position-relative"  >
+              <label for="mailId" class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" id="mailId" required>
+              <div class="valid-tooltip">
+                Todo bien
+              </div>
+              <div class="invalid-tooltip">
+                Es necesario poner el mail
+              </div>
+          </div>
+
+            <div class="col-12 position-relative" >
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" required>
+                  <label for="terms"  class="form-check-label"> Acepto los términos</label>
+                  <div class="valid-tooltip">
+                    Todo bien
+                    <div class="invalid-tooltip">
+                      Es necesario aceptar los términos
+                    </div>
+                  </div>
+              </div>
+
+                <button id="my-form-button"  type="submit" class="btn btn-primary">Enviar</button>
+
+
+
+              </div>  
+
+  <p id="my-form-status"></p>
+
+              </form>
+            
+              <br><br>
+
+              <div id="mapa" class="">
+                <h3>Encontranos Acá</h3>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.410012586303!2d-58.63270904937507!3d-34.64434688035311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb98a65a2832f%3A0x6ee74fb0397b1d4b!2sEst%C3%A9tica%20y%20Spa%20Love%20Yourself!5e0!3m2!1ses!2sar!4v1668121047486!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+          
+                
+              </div>
+            
+            <script>
+              
+(() => {
+'use strict'
+
+
+const forms = document.querySelectorAll('.needs-validation')
+
+
+Array.from(forms).forEach(form => {
+form.addEventListener('submit', event => {
+if (!form.checkValidity()) {
+  event.preventDefault()
+  event.stopPropagation()
+}
+
+form.classList.add('was-validated')
+}, false)
+})
+})()
+            </script>
+
+
+          </form>
+          
+          </div>
+        
+      </section>
+
+  </main>
+
+    <!-- Pie de pagina -->
+
+       <footer>
+        	 <script>
+          var form = document.getElementById("my-form");
+          
+          async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("my-form-status");
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+              method: form.method,
+              body: data,
+              headers: {
+                  'Accept': 'application/json'
+              }
+            }).then(response => {
+              if (response.ok) {
+                status.innerHTML = "Thanks for your submission!";
+                form.reset()
+              } else {
+                response.json().then(data => {
+                  if (Object.hasOwn(data, 'errors')) {
+                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                  } else {
+                    status.innerHTML = "Oops! There was a problem submitting your form"
+                  }
+                })
+              }
+            }).catch(error => {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            });
+          }
+          form.addEventListener("submit", handleSubmit)
+      </script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(".hide").on('click', function() {
+      $("nav ul").toggle('slow');
+    })
+  </script>
+
+</body>
+</html>
